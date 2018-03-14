@@ -1,0 +1,7 @@
+for AWS instance
+git config --global user.name "SanjeevaKaki-Amzn"
+git config --global user.email "remote@amazon.com"
+
+for Katakoda instance
+git config --global user.name "SanjeevaKaki-ktkd"
+git config --global user.email "remote@ktkd.com"
