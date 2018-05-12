@@ -87,6 +87,48 @@ git diff <hash1> <hash2>
 
 
 ********************************MODULE 3***************************************
+##STASH
+git branch newBranch
+git checkout newBranch
+git diff
+##Do some changes here in this branch
+git stash save "I got some work on master, worked something till now here"
+git status
+git stash list
+git stash apply stash@{0}
+git stash list
+git checkout -- .
+git stash pop #Grabs very first stash and applies on the repo and it removes stash
+git stash list #ideally removes the top stash on the stack
+
+#Handling with multiple stashes
+git stash list 
+git stash save "yo yo I'm adding something"
+#add some changes againa and stash it
+git stash save "yo yo this is second stash adding now"
+git stash list
+git stash drop stash@{0}
+#Then it drops top stack stash
+
+git stash clear #clears all the stashes
+
+#Using git stash you can also do like below
+git checkout master
+#Add something here
+git stash save "Save here with some comment"
+git checkout newBranch
+git stash pop
+git diff
+git status
+git add .
+git commit -m "some message"
+
+point to be noted: Stash can be accessible across the branchees
+
+***********************************MODULE 4************************************
+#GIT merge and diff tools
+
+
 
 
 
