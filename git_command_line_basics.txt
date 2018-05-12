@@ -75,5 +75,18 @@ git reset < hash > #Brings the changes down to wroking directory
 git reset --hard <hash> #Delete all the changes cleanly till hash, deletes evenfrom working directory
 
 git clean -df #To delete all the untracked files and folders
+git reflog
+git checkout <hash of the resetted commit>
+git branch backup
+git checkout backup
+git log
+git checkout master 
+Now the lost commit is backed up in the backup branch
+git revert <hash of the commit> #It wont touch the previous git history but removes the previous commit and creates a new one
+git diff <hash1> <hash2>
+
+
+********************************MODULE 3***************************************
+
 
 
