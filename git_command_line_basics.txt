@@ -71,4 +71,6 @@ But this not delete the commit on the previous branch, we have to delete it expl
 git checkout master
 git reset --soft < hash > #Soft resets bac to staging area
 
+git reset < hash > #Brings the changes down to wroking directory
+git reset --hard <hash> #Delete all the changes cleanly till hash, deletes evenfrom working directory
 
