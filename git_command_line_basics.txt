@@ -1,0 +1,26 @@
+git --version
+git config --global user.name "username"
+git config --global user.email "your email id"
+git config --list
+git config --help
+
+
+git init #initilize the repo
+git status
+git add -A #add the edited files to staging area
+git commit -m "Some comment here" #commiting staged files in the repo
+.gitignore file creation
+
+Woring directory and staging area and commited files
+git reset <filename>
+git reset 
+
+as soon as we commit the changes then we will get commit hash number which is unique each ans every commit in the repo
+
+git clone <URL> <location to place>
+git remote add <repo name> <URL to link remote repo>
+git remote -v
+git branch -a
+
+
+
