@@ -74,3 +74,6 @@ git reset --soft < hash > #Soft resets bac to staging area
 git reset < hash > #Brings the changes down to wroking directory
 git reset --hard <hash> #Delete all the changes cleanly till hash, deletes evenfrom working directory
 
+git clean -df #To delete all the untracked files and folders
+
+
