@@ -128,7 +128,22 @@ point to be noted: Stash can be accessible across the branchees
 ***********************************MODULE 4************************************
 #GIT merge and diff tools
 
+***********************************Module 6************************************
 
+git add -A #Adds all the diectoies and files to staging area, irrespective of the location from where you are ruunning the command
+
+git add -A someDir/ #Add all the files and folder inside the someDir alone, ignore the files in parent directory "git add someDir/" also do same.
+
+git add --no-all someDir/ #will add the files staging only the modified and new not any deleted files
+
+git add -u #Adds all the files which are deleted/modified not any untracked files(that mean new files)
+
+git add -u someDir/ #Works same as above but confines to a specified directory only
+
+git add . #But this is differs from "git add -A", this particular command only adds the working directory files in the current working directory not any other files in parent directories.
+
+git add * #This adds all the files and directories to staging area but not hidden and deleted files in the currently but all the hidden and deleted files in it's children directories
+ 
 
 
 
