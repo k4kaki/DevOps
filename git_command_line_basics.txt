@@ -1,3 +1,4 @@
+*******************MODULE 1****************************************************
 git --version
 git config --global user.name "username"
 git config --global user.email "your email id"
@@ -26,4 +27,27 @@ git diff
 git status
 git add -A
 git commit -m "comment before commiting to the repo"
+
+git pull origin master
+git push origin master
+
+
+git branch newBranch
+git checkout newBranch
+git push -u origin newBranch
+git branch -a
+
+git checkout master
+git pull origin master
+git branch --merged
+git merge newBranch
+git push origin master
+
+git branch --merged
+git branch -d newBranch
+git branch -a
+git push origin --delete newBranch
+
+********************************MODULE 2***************************************
+
 
