@@ -22,5 +22,8 @@ git remote add <repo name> <URL to link remote repo>
 git remote -v
 git branch -a
 
-
+git diff
+git status
+git add -A
+git commit -m "comment before commiting to the repo"
 
