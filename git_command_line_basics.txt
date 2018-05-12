@@ -51,3 +51,24 @@ git push origin --delete newBranch
 ********************************MODULE 2***************************************
 
 
+to modify message in commit without again commiting is to use amend as below
+git commit --amend "here give your new commit message"
+touch .gitingore 
+git status
+git add -A
+git status
+git commit --amend 
+
+
+here i have commited my changes to master branch instead of a some other branch
+What I can do in such case
+Using cherry we can commit the last commit to desired branch
+git checkout newBranch 
+git cherry-pick <hash of the commit that has been committed in the other branch>
+
+But this not delete the commit on the previous branch, we have to delete it explicitly again
+
+git checkout master
+git reset --soft < hash > #Soft resets bac to staging area
+
+
