@@ -1,0 +1,29 @@
+Jenkins: is a tool for the automation of CI-CD process
+
+CI CD Stages:
+1) COntinous ownload
+Whenever the developer creates any code and he commits in the repo then the VCS(Git/SVN) will download that and works on it. Jenkins detects that ome changes are one on the the code by the deveopers and it downloads that code
+
+2) Continous Build:
+The code download in the preious stage has to be build ie it should be converted as an artifact. This artifact can be a war, ear, exe file etc.THis buid process an be done using tools like and, maven, MS build etc. Jenkins with the help of these build tools will create an artifact
+
+3) Continuous Deployment:
+THe artifact created in the previous stage has to be deployed in the QA servers(testing servers). The QA servers might be running on some application server like Tomcat, Jboss, Weblogic etc. Jenkins will deploy the artifcat into these application servers
+
+4) Continous Testing:
+Organzations use different testing tools like selenium, odedu etc. Testers will create the testing code using those tools and upload this code into the VCS(GIT SVN) Jenkins will donwload these testing programs and test the application that was deployed in the QA servers. If the testing fails it will send automated mails to the team mebers an the deveoper will fix the bugs and upload the new code into git. Jenkins willl again start the complete process from stage 1
+
+5) Continous Delivery:
+If testing has passed then jenkins will deploy the application on the prodction servers fter taking aprovals..
+
+The first 4 stages are called as continous integration. and the last stage is continous delivery.
+
+Setup for Jenkins:
+
+#setup some machine for Jenkins could be any Linux favour
+1. Download and install vagrant in your machine.
+2. to check if vagrant is install or not, open terminal Vagrant --version
+3. Copy vagrant file in any empty folder where we copied vagrant file
+   cd path-of-vagrantfile
+4. vagrant up
+5. this will create some linux machines.
