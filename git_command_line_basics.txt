@@ -7,6 +7,7 @@ git config --help
 
 
 git init #initilize the repo
+git init --bare
 git status
 git add -A #add the edited files to staging area
 git commit -m "Some comment here" #commiting staged files in the repo
@@ -19,11 +20,11 @@ git reset
 as soon as we commit the changes then we will get commit hash number which is unique each ans every commit in the repo
 
 git clone <URL> <location to place>
-git remote add <repo name> <URL to link remote repo>
-git remote -v
-git branch -a
+git remote add <repo name> <URL to link remote repo> #This is to add your local repo to remote repo
+git remote -v 
+git branch -a #Gives al the branches both local and remote
 
-git diff
+git diff #Gives difference between your current working directory and committed files
 git status
 git add -A
 git commit -m "comment before commiting to the repo"
@@ -32,9 +33,9 @@ git pull origin master
 git push origin master
 
 
-git branch newBranch
-git checkout newBranch
-git push -u origin newBranch
+git branch newBranch #TO create a new branch
+git checkout newBranch #to switch to newBranch
+git push -u origin newBranch  #Thsi will push new branch on to remote repo 
 git branch -a
 
 git checkout master
