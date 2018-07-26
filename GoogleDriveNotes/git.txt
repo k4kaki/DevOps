@@ -1,0 +1,28 @@
+####################Lecture01##########################
+
+1. Source Code Management, Version controlling system
+
+THe Advantages are:
+Teamwork
+Defect Tracking
+Configuration auditing
+Process Management
+
+
+When developers are working on a product there won't be one developer who is developing the product, there would N number of developers would be working on different components of the product and as well as from different geographic locations on the globe. There would be some coordination problem in such cases.
+And if we modifies a file N number of times it is impractical to take backup of each and eavry change emplicitly. that also can be addressed by the VCS tool. SCM is a process where we storing the code effectively so that we can track the whole code and we can point at what who made which changes on the code. Unalterable history can be stored along with code.
+
+Access also can be restricted on the repo.
+DevOps engineers are the ones who is going to define the process and as well as DevOps engineers also doing scipting for automation and etc. They also can maintain their code in repos and maintain. Ex: Docs, build scripts, automation scripts.
+
+SCM Terminoligies
+Server/Client #Server will have all the repos whereas the client will have workspace of repos to wok on
+Repository #Repository is a place on server/client where all your committed code will be resided
+Workspace #Where we copy the files from repo and we work on
+Branch #Branch is a place where we can work parallelly
+Checkin/Checkout
+Revision
+Baseline
+
+
+
