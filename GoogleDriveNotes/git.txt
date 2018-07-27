@@ -24,5 +24,53 @@ Checkin/Checkout
 Revision
 Baseline
 
+###########################Lecture02#################################################
+
+Difference between centralised and distributed models?
+In git there is no concept called server and client
+We are storing the copies in both remote and local
+in git everthing is a workspace, every workspace will have a copy of the repo
+git will have central and local repos
+git uses the concept of SNAPSHOT: Hwnever you do some changes it will takes only delta from from remote to local repo
+
+commit ID: Everytime as soon as you commit the changes that will create a 40 long characters ID will be created
+
+
+In git workspace there would be three areas
+
+1. Working Directory: where you actually modifying the files.(Modified and unmodified files)
+2. Staging Area: is a buffer area(Staged files), here git will take SNAPSHOT
+3. Commit:(Committed files)
+
+ Any file that added for the first time into working directory is called untracked file(this is before moving the file into staging area
+
+
+
+
+
+1. Set the name and emailfor Git to user  when you commit
+$git config --global user.name "Bugs Bunny"
+$git config --global user.email "example@example.com"
+$git config --global push.default simple
+
+call git config list to verify these are set
+These will be set  globally for all Git projects you work with 
+You can also set variables on a project-only basisby removing --global flag
+
+Bare-Repository:
+1. contains the version control information and no workign files
+2. By convention the name of the bare repository should end with .git extension
+$git init --bare <name>.git
+
+Non_Bare-repository:
+1. These are regular user repository which has  the working files & .git  dir
+2. Creating a new local repository
+$git clone <remote> <local>
+
+Untracked file is file which details are not available in the repository
+commit_ID is a collection of files isn't a single file
+To check what has been added in a commit, just give command as below
+$git show <commit_ID>
+$git push #will push all your changes onto the remote repo
 
 
