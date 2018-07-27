@@ -121,4 +121,13 @@ $git stash apply stash@{num} #Apply a specific stash from repo
 $git stash clear #Remove stash from repo
 
 Reverting the changes in GIT:
-1. 
+
+1.Revert uncommited changes: $git reset <file>
+
+
+2.Move only HEAD pointer: $git reset --soft
+
+
+3.Move the HEAD pointer & reset the staging area: $git reset --mixed
+4.Move the HEAD pointer, resets staging area & working tree to the new HEAD: $git reset --hard
+
