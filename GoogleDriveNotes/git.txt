@@ -1,0 +1,112 @@
+####################Lecture01##########################
+
+1. Source Code Management, Version controlling system
+
+THe Advantages are:
+Teamwork
+Defect Tracking
+Configuration auditing
+Process Management
+
+
+When developers are working on a product there won't be one developer who is developing the product, there would N number of developers would be working on different components of the product and as well as from different geographic locations on the globe. There would be some coordination problem in such cases.
+And if we modifies a file N number of times it is impractical to take backup of each and eavry change emplicitly. that also can be addressed by the VCS tool. SCM is a process where we storing the code effectively so that we can track the whole code and we can point at what who made which changes on the code. Unalterable history can be stored along with code.
+
+Access also can be restricted on the repo.
+DevOps engineers are the ones who is going to define the process and as well as DevOps engineers also doing scipting for automation and etc. They also can maintain their code in repos and maintain. Ex: Docs, build scripts, automation scripts.
+
+SCM Terminoligies
+Server/Client #Server will have all the repos whereas the client will have workspace of repos to wok on
+Repository #Repository is a place on server/client where all your committed code will be resided
+Workspace #Where we copy the files from repo and we work on
+Branch #Branch is a place where we can work parallelly
+Checkin/Checkout
+Revision
+Baseline
+
+###########################Lecture02#################################################
+
+Difference between centralised and distributed models?
+In git there is no concept called server and client
+We are storing the copies in both remote and local
+in git everthing is a workspace, every workspace will have a copy of the repo
+git will have central and local repos
+git uses the concept of SNAPSHOT: Hwnever you do some changes it will takes only delta from from remote to local repo
+
+commit ID: Everytime as soon as you commit the changes that will create a 40 long characters ID will be created
+
+
+In git workspace there would be three areas
+
+1. Working Directory: where you actually modifying the files.(Modified and unmodified files)
+2. Staging Area: is a buffer area(Staged files), here git will take SNAPSHOT
+3. Commit:(Committed files)
+
+ Any file that added for the first time into working directory is called untracked file(this is before moving the file into staging area
+
+
+
+
+
+1. Set the name and emailfor Git to user  when you commit
+$git config --global user.name "Bugs Bunny"
+$git config --global user.email "example@example.com"
+$git config --global push.default simple
+
+call git config list to verify these are set
+These will be set  globally for all Git projects you work with 
+You can also set variables on a project-only basisby removing --global flag
+
+Bare-Repository:
+1. contains the version control information and no workign files
+2. By convention the name of the bare repository should end with .git extension
+$git init --bare <name>.git
+
+Non_Bare-repository:
+1. These are regular user repository which has  the working files & .git  dir
+2. Creating a new local repository
+$git clone <remote> <local>
+
+Untracked file is file which details are not available in the repository
+commit_ID is a collection of files isn't a single file
+To check what has been added in a commit, just give command as below
+$git show <commit_ID>
+$git push #will push all your changes onto the remote repo
+
+Untracked file is a newly added file that doesn't exist in repo whereas modified file is a file where it is already available in repo but some changes have been added in working directory.
+
+$git pull #Is to used to get the newly committed files from remote to local and merge it in one shot
+
+Before you going to push some changes into the remote repo then you have to first pull the changes from there inorder to prevent pushing fail.
+
+$git log -n #Will print first 'n' latest commit IDs from log
+Sometimes we may need to search some particular commit ID, in such we can use grep to get that.
+Sometimes we may need to test the files before we going to commit them, in such case we may need to ignore the generated files like .class and .log files, that's where we use .gitignore to ignore those compiled files and logs
+
+************GIT BRANCHING**********
+
+1. If we want to work on a parallel release in such case we will be using the concept of branching.
+2. Whenever you create a branch then the master branch copy will be present at that point in the new branch.
+$git checkout <branchNmae> #To switch between branches
+$git checkout -b <branchname> #Will create a branch and checks into that branch
+3. After doing parallel changes on two related branches we can merge them afterwards as below.
+i. Do changes on the new branch and commit them
+ii. Switch to the master branch 
+iii. git merge newBranch master #mentioning master is optional if you execute the ii step.
+iv. If you have other branches along with master in remote repo, and if you clone from that to your local, by default you will not get all them unless you explicitly checkout to those other branches as well
+$git pull origin master #Pulls all the changes to local repo from remote repo
+$git push origin master #Pushes all the changes from local master to remote master
+$git push -u --all #To push all the local branches to the remote repository
+$git push  -u origin central_branch #Pushes al the changes in current local branch to remote coresponding branch
+
+
+The difference between merge and cherry-pick: if merge a branch with another by default all the changes in one will be moved other branch, instead of this if you want to merge a particular commit to other branch you can do that by using cherry-pick instead of merge.
+$git branch experimental
+$git branch
+$git checkout experimental
+$git diff master <your_branch>
+$git merge <source_branch> <destination_branch>
+$git cherry-ck <commit_ID> <destination_branch>
+$git branch -a #To check all the branches on repos of both local and remote
+
+
