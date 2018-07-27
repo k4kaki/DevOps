@@ -120,14 +120,16 @@ $git stash pop  #Reapply the changes, remove stash
 $git stash apply stash@{num} #Apply a specific stash from repo
 $git stash clear #Remove stash from repo
 
-Reverting the changes in GIT:
+Reverting the changes in GIT:(All these are before commit)
 
 1.Revert uncommited changes: $git reset <file>
 
 
 2.Move only HEAD pointer: $git reset --soft
-
+This will simply change the pointer HEAD from TEMP to last commit.
 
 3.Move the HEAD pointer & reset the staging area: $git reset --mixed
-4.Move the HEAD pointer, resets staging area & working tree to the new HEAD: $git reset --hard
+This will change the HEAD pointer to last commint and unstage the files to working directory.
 
+4.Move the HEAD pointer, resets staging area & working tree to the new HEAD: $git reset --hard
+This will change the HEAD pointer to last commit and unstage the files and even deletes the changes from working directory.
