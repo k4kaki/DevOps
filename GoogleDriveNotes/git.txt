@@ -110,8 +110,15 @@ $git cherry-ck <commit_ID> <destination_branch>
 $git branch -a #To check all the branches on repos of both local and remote
 
 Stashing committed changes
+
+Stash is to store the changes temperarily from working directory for the review later, as soon as stash the current work you will have your repo to last committed changes. and the current work to the stash list.
+If you want to see what there inside the stash without applying it "$git stash show -p stash@{0}"
+
 $git stash  #creates stash, remove changes from working dir
 $git stash list #To list all the stash available for the repository
 $git stash pop  #Reapply the changes, remove stash
 $git stash apply stash@{num} #Apply a specific stash from repo
 $git stash clear #Remove stash from repo
+
+Reverting the changes in GIT:
+1. 
