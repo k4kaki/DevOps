@@ -73,4 +73,40 @@ To check what has been added in a commit, just give command as below
 $git show <commit_ID>
 $git push #will push all your changes onto the remote repo
 
+Untracked file is a newly added file that doesn't exist in repo whereas modified file is a file where it is already available in repo but some changes have been added in working directory.
+
+$git pull #Is to used to get the newly committed files from remote to local and merge it in one shot
+
+Before you going to push some changes into the remote repo then you have to first pull the changes from there inorder to prevent pushing fail.
+
+$git log -n #Will print first 'n' latest commit IDs from log
+Sometimes we may need to search some particular commit ID, in such we can use grep to get that.
+Sometimes we may need to test the files before we going to commit them, in such case we may need to ignore the generated files like .class and .log files, that's where we use .gitignore to ignore those compiled files and logs
+
+************GIT BRANCHING**********
+
+1. If we want to work on a parallel release in such case we will be using the concept of branching.
+2. Whenever you create a branch then the master branch copy will be present at that point in the new branch.
+$git checkout <branchNmae> #To switch between branches
+$git checkout -b <branchname> #Will create a branch and checks into that branch
+3. After doing parallel changes on two related branches we can merge them afterwards as below.
+i. Do changes on the new branch and commit them
+ii. Switch to the master branch 
+iii. git merge newBranch master #mentioning master is optional if you execute the ii step.
+iv. If you have other branches along with master in remote repo, and if you clone from that to your local, by default you will not get all them unless you explicitly checkout to those other branches as well
+$git pull origin master #Pulls all the changes to local repo from remote repo
+$git push origin master #Pushes all the changes from local master to remote master
+$git push -u --all #To push all the local branches to the remote repository
+$git push  -u origin central_branch #Pushes al the changes in current local branch to remote coresponding branch
+
+
+The difference between merge and cherry-pick: if merge a branch with another by default all the changes in one will be moved other branch, instead of this if you want to merge a particular commit to other branch you can do that by using cherry-pick instead of merge.
+$git branch experimental
+$git branch
+$git checkout experimental
+$git diff master <your_branch>
+$git merge <source_branch> <destination_branch>
+$git cherry-ck <commit_ID> <destination_branch>
+$git branch -a #To check all the branches on repos of both local and remote
+
 
