@@ -109,4 +109,9 @@ $git merge <source_branch> <destination_branch>
 $git cherry-ck <commit_ID> <destination_branch>
 $git branch -a #To check all the branches on repos of both local and remote
 
-
+Stashing committed changes
+$git stash  #creates stash, remove changes from working dir
+$git stash list #To list all the stash available for the repository
+$git stash pop  #Reapply the changes, remove stash
+$git stash apply stash@{num} #Apply a specific stash from repo
+$git stash clear #Remove stash from repo
