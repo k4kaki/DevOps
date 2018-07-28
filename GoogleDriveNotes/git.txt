@@ -137,7 +137,10 @@ This will change the HEAD pointer to last commit and unstage the files and even 
 Reverting committed changes:
 
 1. Revert a commit: $git revert <commit>
+Whenever you revert a commit it won't delete the previous commit ID, instead it will create a new commit ID while removing the contents of commit ID which you mentioned in the revert.
+
 2. Checkout specific commit: $git checkout <commit_ID>
+
 3. Deleting a file: $git rm <file_name>
 4. Removing untraked files:
    $git clean -n (-n is for dry run)
