@@ -157,6 +157,7 @@ If you want to move to some commit ID in other branch then you may need to menti
 
 Git tag: Git has the option to tag a commit in the repository history so that you find it easier at a later point in time, in general tag is referred by developers to QA to test or to name release point for particular commit.(It is easier to remember tag instead of a commit ID)
 Examples: Release_3.1.2, Release_1.0.2.. etc
+You can have multiple tags to a same commit_id but vice versa isn't possible.
 
 Apply tag to a commit:
 $git tag -a <pattern> -m "comment" <commit_id>
