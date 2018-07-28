@@ -40,5 +40,68 @@ Achieved Characteristics:
 Every build tools has it's own configuration file for going ahead, likewise maven also having pom.xml
 For building, maven needs sources and resources(plugins/dependencies) from which it can go ahead with build. First for dependencies maven search in local repo then it will go on search in remote repo.
 
+Maven Build Lifecycle
+ - Maven build follow a lifecycle
+  - Default lifecycle(The definition default lifecycle means whatever the phase you are go call then it again comes from sources/resources step to till the step which you invoked)
+   - generate-sources/generate-resources #Checks for all the resources needed to work with coming phases. It list and get ready with all the sources&resources.
+   - compile # compiling both source/test java files.
+   - test # 
+   - package # package step is generating  a deliverable that could be jar/war/ear file
+   - Install # Let's you have dependency with another project, let's B.jar depedent on A.jar, let's say if you are going to run B.jar then the first step it is going to check is sources/resources, it first check in local repo and then in remote repos for A.jar. When you run Install against a project then it will run and copy that deliverable and puts in local repo made it available for other projects. 
+   - deploy # Is a phase where we are taking a particular deliverable and putting inside a appplication deploy folder.
+ - There is also Clean, Site lifecycle
+
+Examples of Maven Goals:
+To invoke a Maven build you set a lifecycle "goal"
+ - mvn install #Invokes generate and compile, test, package, integration-test, install
+ - mvn clean #Invokes just clean
+ - mvn clean compile #Clean old builds and execute generate, compile
+ - mvn compile install #Invokes generate, compile, test, integration-test, package, install
+ - mvn test clean #Invokes generate*, compile, test then cleans
+(Maven never performs duplication steps like if compile then invoke install then it will proceed from test instead of compile again)
+
+Standard Directory Layout:
+Let's say this is your work space, then you will be having the following structure.
+You should have pom.xml in you work space along with src folder. src folder structure should as follows
+src
+src/main
+src/main/java
+	1.java
+	2.java
+src/main/resources/ #contains Application/Library resources
+src/main/filters/ #Resource filter files
+src/main/assembly #Contains assembly descriptors
+src/main/config #contains configuration files
+src/main/scripts #contains Application/Library scripts
+src/main/webapp #web application resources
+src/test/
+src/test/java/
+	test1.java
+	test2.java
+src/test/resources #test resources
+src/test/filters #Test resource filter files
+src/site/ #site
+LICENSE.txt
+NOTICE.txt
+README.txt
+pom.xml
+
+Project Name(GAV)
+
+Maven uniquely identifies a project using:
+
+ - groupID: Arbitrarily project grouping identifier(no spaces or colons)
+   - Usually loosely based on Java package
+ - artifactID: Arbitrary name of project(no spaces or colons)
+ - version: Version of project
+   - Format {Major}.{Minor}.{Maintenance}
+   - Add '-SNAPSHOT' to identify in development
+ - GAV Syntax: groupId:artifactId:version
+ - Build type identified using the "packaging" element
+ - Tells Maven how to build the project
+ - Examples packaging types:
+   - pom, jar, war, ear, custom
+   - Default is jar
+
 
 
