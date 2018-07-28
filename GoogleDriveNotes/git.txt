@@ -133,3 +133,13 @@ This will change the HEAD pointer to last commint and unstage the files to worki
 
 4.Move the HEAD pointer, resets staging area & working tree to the new HEAD: $git reset --hard
 This will change the HEAD pointer to last commit and unstage the files and even deletes the changes from working directory.
+
+Reverting committed changes:
+
+1. Revert a commit: $git revert <commit>
+2. Checkout specific commit: $git checkout <commit_ID>
+3. Deleting a file: $git rm <file_name>
+4. Removing untraked files:
+   $git clean -n (-n is for dry run)
+   $git clean -f (force delete)
+5. Discard changes in working directory: $git checkout -- <file>
