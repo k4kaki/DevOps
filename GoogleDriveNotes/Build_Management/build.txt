@@ -1,0 +1,44 @@
+#####################BUILD_MANAGEMENT###################
+
+It is the process of compiling and assembling a software system
+
+Build automation is the act of scripting ot automating a wide variety of tasks
+  -Compiling source code
+  -Packing binaries
+  -Running automated tests
+  -Deploying to production system
+  -Creating documentation
+
+**MAVEN**
+What is Maven?
+
+"Maven is project management tool which encompasses a project object model, a set of standards, a project lifecycle, a dependency management system and logic for executing plugin goals at defined phases in a lifecycle"
+
+ - Maven provides superset of features found in a build tool
+ - Maven manages project build, reporting, and documentation from a central piece of information.
+ - Maven is used for java projects
+ - Maven is an open source tool
+ - Maven runs on java
+
+Whatever the tasks are going to be given for maven are all interms of goals. Everygoals is implemented with use of plugin. at the task will be implemented.
+Maven -> Goals -> plugins -> tasks
+
+Characteristics of MAVEN
+Maven is more than just a build tool
+Maven was built considering certain objectives
+Maven Provides:
+ - Easy Build Process
+ - Uniform Build System
+ - Quality project Information
+ - Guidlines for Best Practices Development
+Achieved Characteristics:
+ - Visibility
+ - Reusability
+ - Maintainability
+ - Comprehensibility "Accumulator of Knowledge"
+
+Every build tools has it's own configuration file for going ahead, likewise maven also having pom.xml
+For building, maven needs sources and resources(plugins/dependencies) from which it can go ahead with build. First for dependencies maven search in local repo then it will go on search in remote repo.
+
+
+
