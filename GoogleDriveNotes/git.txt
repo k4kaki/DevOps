@@ -146,10 +146,13 @@ Checkout means you are commanding the GIT to show you the exact contet(No modifi
 COMMIT ID -> Branch -> Repo
 If you want to move to some commit ID in other branch then you may need to mention like this $git checkout BRANCH@@COMMIT_ID, If you don't give Branch then it assumes as current branch, if you don't give commit_id it will assumes as latest commit_id.
 
-
 3. Deleting a file: $git rm <file_name>
 
 4. Removing untraked files:
-   $git clean -n (-n is for dry run)
-   $git clean -f (force delete)
+   $git clean -n (-n is for dry run) #git clean is used to delete all the files which are untracked, if you want to cross check what are all the files going to be deleted before proceeding you always execute the this command. This show you what are all the files expected to be deleted.
+   
+   $git clean -f (force delete) #force will delete all the files forcefully
+
 5. Discard changes in working directory: $git checkout -- <file>
+
+Git tag
