@@ -64,7 +64,7 @@ $git init --bare <name>.git
 
 Non_Bare-repository:
 1. These are regular user repository which has  the working files & .git  dir
-2. Creating a new local repository
+2. Creating a new local repository $git init <some_name>
 $git clone <remote> <local>
 
 Untracked file is file which details are not available in the repository
